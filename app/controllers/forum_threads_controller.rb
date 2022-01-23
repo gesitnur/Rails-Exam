@@ -8,4 +8,12 @@ class ForumThreadsController < ApplicationController
         @thread = ForumThread::find(params[:id])
     end
 
+    def new
+        @thread = ForumThread.new
+    end
+
+    def create
+
+    end
+
 end
