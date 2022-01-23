@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   root "forum_threads#index"
 
+  resources :forum_threads, only: [:show]
+
 end
