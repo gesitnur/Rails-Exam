@@ -1,4 +1,13 @@
 <div class='col-md-6 offset-md-3'>
+
+    <% if @thread.errors.any? %>
+        <div class='alert alert-danger alert-dismissible'>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true>&times;</span></button>
+        <% @thread.errors.full_messages.each do |error| %>
+            <span> <%= error %> </span></br>
+        </div>
+        <% end %>
+    <%end%>
     <%= form_for @thread do |f| %>
         <div class='form-group'>
             <%= f.label :title %>

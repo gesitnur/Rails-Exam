@@ -19,7 +19,7 @@ class ForumThreadsController < ApplicationController
             puts 'berhasil disimpan'
             redirect_to root_path
         else
-            puts @thread.error.full_messages
+            render 'new'
         end
     end
 
