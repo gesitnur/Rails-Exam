@@ -15,7 +15,8 @@ class ForumThreadsController < ApplicationController
 
     def create
         @thread = ForumThread.new(resource_param)
-        @thread.user = User.first
+        @thread.user = current_user
+
         if @thread.save
             puts 'berhasil disimpan'
             redirect_to root_path
