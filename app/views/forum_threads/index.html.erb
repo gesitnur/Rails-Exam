@@ -3,9 +3,11 @@
     <% if user_signed_in?%>
     <%= link_to 'Buat Diskusi', new_forum_thread_path, class: 'btn btn-primary' %>
     <%end%>
+    </br>
+    </br>
     <% @threads.each do |t| %>
         <div class="thread">
-            <h4><%= link_to t.title.titleize, forum_thread_path(t) %></h4>
+            <h4><%= link_to t.title.titleize, forum_thread_path(t), style: 'text-decoration: none;' %></h4>
 
             <div class="meta">
                 <%= I18n.l( t.created_at.to_date )%> oleh <%= t.user.name %>

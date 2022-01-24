@@ -20,8 +20,8 @@ class ForumThreadsController < ApplicationController
         @thread.user = current_user
 
         if @thread.save
-            puts 'berhasil disimpan'
             redirect_to root_path
+            flash.alert = "Berhasil Disimpan"
         else
             render 'new'
         end
